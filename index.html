@@ -70,9 +70,9 @@
         if(selectedCountry != null)
         {
             var value = selectedCountry[0].VisaList[0];
-            var initData2 = {"ITA":{"fillKey":"VOA"}};
-
-                mapObject.updateChoropleth(initData2);
+            var arrayValues = {};
+            arrayValues["ITA"] = "VOA";
+                mapObject.updateChoropleth(arrayValues);
         }
     }
 
