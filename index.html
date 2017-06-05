@@ -59,16 +59,14 @@
 
     function loadVisaFor()
     {
-        console.log('OK');
         var $input = $("#countryList");
         var selectedCountry = jsonCountriesObjects.filter(function(country){
             return country.Name == $input.val();
         });
 
-        console.log(selectedCountry);
         if(selectedCountry != null)
         {
-                mapObject.updateChoropleth(selectedCountry.VisaList);
+                mapObject.updateChoropleth(selectedCountry[0].VisaList);
         }
     }
 
