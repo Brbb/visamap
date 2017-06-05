@@ -36,7 +36,7 @@
             $.getJSON('data/datamapsource.json',function(data)
             {
                 var countries = [];
-                data.array.forEach(function(element) {
+                data.forEach(function(element) {
                     countries.push(element.Name);
                 }, this);
 
