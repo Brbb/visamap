@@ -1,0 +1,56 @@
+<html>
+<head>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css" >
+<!-- Latest compiled and minified JavaScript -->
+<link rel="javascript" src="js/bootstrap.min.js"></script>
+<script src="js/datamaps.world.min.js"></script>
+<script src="js/bootstrap3-typeahead.min.js"></script>
+<script src="js/datamaps.world.min.js"></script>
+<style>
+.map{
+    
+    width: 80%; 
+    height: 80%;
+}
+
+.searchContainer{
+    padding: 10px;
+}
+
+</style>
+
+<script>
+
+    $(function(){
+        var map = new Datamap(
+            {
+                element: document.getElementById('map'),
+                projection: 'mercator',
+            });
+            
+            $.getJSON('datamapsource.json',function(data)
+            {
+                alert('ok');
+            });
+    })
+</script>
+</head>
+<body>
+    <div class="container">
+            <form class="form-inline">
+                <div class="form-group searchContainer">
+                    <input type="text" placeholder="Passport country" data-provide="typeahead" class="form-control" />
+                    <button class="btn btn-success" role="button">Visa</button>
+                </div>
+            </form>
+        <div class="row">
+            <div id="map" class="map"></div>
+        </div>
+    </div>
+</body>
+</html>
