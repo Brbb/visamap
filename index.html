@@ -26,6 +26,8 @@
 
 <script>
 
+    var jsonCountries;
+
     $(function(){
         var map = new Datamap(
             {
@@ -35,22 +37,31 @@
             
             $.getJSON('data/datamapsource.json',function(data)
             {
+                jsonCountries = data;
                 var countries = [];
                 data.forEach(function(element) {
                     countries.push(element.Name);
                 }, this);
 
-                $("#countryList").typeahead({ source:countries});
+                var $input = $("#countryList");
+                $input.typeahead({ source: countries});
             });
-    })
+    });
+
+    function loadVisaFor()
+    {
+        var $input = $("#countryList");
+        alert($input.val());
+    }
+
 </script>
 </head>
 <body>
     <div class="container">
-            <form class="form-inline">
+            <form id="visaForm" class="form-inline" onsubmit="loadVisaFor()">
                 <div class="form-group searchContainer">
                     <input id="countryList" type="text" placeholder="Passport country" data-provide="typeahead" class="form-control" />
-                    <button class="btn btn-success" role="button">Visa</button>
+                    <button id="loadVisaBtn" class="btn btn-success" role="button">Visa</button>
                 </div>
             </form>
         <div class="row">
