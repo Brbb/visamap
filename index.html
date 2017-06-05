@@ -43,18 +43,18 @@
 
                 var $input = $("#countryList");
                 $input.typeahead({ source: countries});
-            }).then(initMap);
+            }).then(initMap(2));
 
     });
 
-    function initMap()
+    function initMap(index)
     {
         mapObject = new Datamap(
             {
                 element: document.getElementById('map'),
                 projection: 'mercator',
                 responsive: true,
-                data: jsonCountriesObjects[0].VisaList,
+                data: jsonCountriesObjects[index].VisaList,
                 fills: {
                     defaultFill: 'grey',
                     VF: 'green',
