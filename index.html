@@ -34,7 +34,14 @@
             {
                 element: document.getElementById('map'),
                 projection: 'mercator',
-                responsive: true
+                responsive: true,
+                fills: {
+                    defaultFill: 'grey',
+                    VF: 'green',
+                    VOA: 'cyan',
+                    VREQ: 'red',
+                    ETA: 'yellow'
+                },
             });
             
             $.getJSON('data/datamapsource.json',function(data)
@@ -52,14 +59,15 @@
 
     function loadVisaFor()
     {
+        console.log('OK');
         var $input = $("#countryList");
         var selectedCountry = jsonCountriesObjects.filter(function(country){
             return country.Name == $input.val();
         });
 
+        console.log(selectedCountry);
         if(selectedCountry != null)
         {
-            console.log(selectedCountry);
             d3.select('#countryList').on('click', function(e) {
                 mapObject.updateChoropleth(selectedCountry.VisaList);
             });
