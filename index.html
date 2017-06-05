@@ -27,12 +27,14 @@
 <script>
 
     var jsonCountriesObjects;
+    var mapObject;
 
     $(function(){
-        var map = new Datamap(
+        mapObject = new Datamap(
             {
                 element: document.getElementById('map'),
                 projection: 'mercator',
+                responsive: true
             });
             
             $.getJSON('data/datamapsource.json',function(data)
@@ -57,7 +59,7 @@
 
         if(selectedCountry != null)
         {
-            map.source = selectedCountry.VisaList;
+            mapObject.source = selectedCountry.VisaList;
         }
     }
 
