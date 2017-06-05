@@ -69,7 +69,24 @@
 
         if(selectedCountry != null)
         {
-                mapObject.updateChoropleth({ITA:'VOA'});
+               mapObject = new Datamap(
+            {
+                element: document.getElementById('map'),
+                projection: 'mercator',
+                responsive: true,
+                data: {
+                    ITA: {
+                            fillKey:'VOA'
+                            }
+                        },
+                fills: {
+                    defaultFill: 'grey',
+                    VF: 'green',
+                    VOA: 'cyan',
+                    VREQ: 'red',
+                    ETA: 'yellow'
+                },
+            });
         }
     }
 
