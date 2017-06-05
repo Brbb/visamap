@@ -29,25 +29,11 @@
     var jsonCountriesObjects;
     var mapObject;
 
-    var initData = {"IND":{"fillKey":"VOA"},JPN:{"fillKey":"ETA"}};
+    var initData;
 
     $(function(){
-        mapObject = new Datamap(
-            {
-                element: document.getElementById('map'),
-                projection: 'mercator',
-                responsive: true,
-                data: initData,
-                fills: {
-                    defaultFill: 'grey',
-                    VF: 'green',
-                    VOA: 'cyan',
-                    VREQ: 'red',
-                    ETA: 'yellow'
-                },
-            });
-            
-            $.getJSON('data/datamapsource.json',function(data)
+
+    $.getJSON('data/datamapsource.json',function(data)
             {
                 jsonCountriesObjects = data;
                 var countries = [];
@@ -57,6 +43,22 @@
 
                 var $input = $("#countryList");
                 $input.typeahead({ source: countries});
+            });
+
+
+        mapObject = new Datamap(
+            {
+                element: document.getElementById('map'),
+                projection: 'mercator',
+                responsive: true,
+                data: jsonCountriesObjects[0].VisaList,
+                fills: {
+                    defaultFill: 'grey',
+                    VF: 'green',
+                    VOA: 'cyan',
+                    VREQ: 'red',
+                    ETA: 'yellow'
+                },
             });
     });
 
