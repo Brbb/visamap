@@ -35,7 +35,12 @@
             
             $.getJSON('data/datamapsource.json',function(data)
             {
-                $("#countryList").typeahead({ source:data });
+                var countries = [];
+                data.array.forEach(function(element) {
+                    countries.push(element.Name);
+                }, this);
+
+                $("#countryList").typeahead({ source:countries});
             });
     })
 </script>
