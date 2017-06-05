@@ -82,20 +82,14 @@
         }
     }
 
-    $("#visaForm").submit(function(e) {
-        e.preventDefault();
-    });
-
 </script>
 </head>
 <body>
     <div class="container">
-            <form id="visaForm" class="form-inline">
-                <div class="form-group searchContainer">
+                <div class="searchContainer">
                     <input id="countryList" type="text" placeholder="Passport country" data-provide="typeahead" class="form-control" />
                     <button id="loadVisaBtn" class="btn btn-success" role="button" onclick="loadVisaFor()">Visa</button>
                 </div>
-            </form>
         <div id="mapRow" class="row">
             <div id="map" class="map"></div>
         </div>
