@@ -36,6 +36,11 @@
             $.getJSON('data/datamapsource.json',function(data)
             {
                 console.log(data);
+                var countries = [];
+
+                data.each(function(item){
+                    countries.push(item.Name);
+                });
             });
     })
 </script>
