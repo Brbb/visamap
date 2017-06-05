@@ -90,10 +90,10 @@
 </head>
 <body>
     <div class="container">
-            <form id="visaForm" class="form-inline" onsubmit="loadVisaFor()">
+            <form id="visaForm" class="form-inline">
                 <div class="form-group searchContainer">
                     <input id="countryList" type="text" placeholder="Passport country" data-provide="typeahead" class="form-control" />
-                    <button id="loadVisaBtn" class="btn btn-success" role="button">Visa</button>
+                    <button id="loadVisaBtn" class="btn btn-success" role="button" onclick="loadVisaFor()">Visa</button>
                 </div>
             </form>
         <div id="mapRow" class="row">
