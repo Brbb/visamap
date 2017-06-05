@@ -43,9 +43,12 @@
 
                 var $input = $("#countryList");
                 $input.typeahead({ source: countries});
-            });
+            }).then(initMap);
 
+    });
 
+    function initMap()
+    {
         mapObject = new Datamap(
             {
                 element: document.getElementById('map'),
@@ -60,7 +63,7 @@
                     ETA: 'yellow'
                 },
             });
-    });
+    }
 
     function loadVisaFor()
     {
