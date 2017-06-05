@@ -28,7 +28,6 @@
 
     var jsonCountriesObjects;
     var countries = [];
-    var countryIndex = 0;
 
     $(function(){
 
@@ -41,7 +40,7 @@
 
                 var $input = $("#countryList");
                 $input.typeahead({ source: countries});
-            }).done(function(){initMap(countryIndex);});
+            }).done(function(){initMap(0);});
 
     });
 
@@ -73,11 +72,11 @@
         if(selectedCountry != null)
         {
             var indexOf = countries.indexOf(selectedCountry[0].Name);
-            if(indexOf != null)
+            if(indexOf != null && indexOf > -1)
             {
-                countryIndex = indexOf;
                 $("#map").remove();
                 $("#mapRow").append('<div id="map" class="map"></div>');
+                initMap(indexOf);
             }
         }
     }
