@@ -27,7 +27,6 @@
 <script>
 
     var jsonCountriesObjects;
-    var mapObject;
     var countries = [];
     var countryIndex = 0;
 
@@ -48,7 +47,7 @@
 
     function initMap(index)
     {
-        mapObject = new Datamap(
+        var mapObject = new Datamap(
             {
                 element: document.getElementById('map'),
                 projection: 'mercator',
