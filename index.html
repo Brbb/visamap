@@ -29,12 +29,15 @@
     var jsonCountriesObjects;
     var mapObject;
 
+    var initData = {'USA':{fillKey:'VOA'}};
+
     $(function(){
         mapObject = new Datamap(
             {
                 element: document.getElementById('map'),
                 projection: 'mercator',
                 responsive: true,
+                data: initData,
                 fills: {
                     defaultFill: 'grey',
                     VF: 'green',
