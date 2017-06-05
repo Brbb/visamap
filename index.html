@@ -29,7 +29,7 @@
     var jsonCountriesObjects;
     var mapObject;
 
-    var initData = {'USA':{fillKey:'VOA'}};
+    var initData = {"IND":{"fillKey":"VOA"},JPN:{"fillKey":"ETA"}};
 
     $(function(){
         mapObject = new Datamap(
@@ -69,7 +69,8 @@
 
         if(selectedCountry != null)
         {
-                mapObject.updateChoropleth(selectedCountry[0].VisaList);
+            var value = selectedCountry[0].VisaList[0];
+                mapObject.updateChoropleth(value);
         }
     }
 
