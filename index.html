@@ -28,15 +28,13 @@
 
     var jsonCountriesObjects;
     var mapObject;
-
-    var initData;
+    var countries = [];
 
     $(function(){
 
     $.getJSON('data/datamapsource.json',function(data)
             {
                 jsonCountriesObjects = data;
-                var countries = [];
                 data.forEach(function(element) {
                     countries.push(element.Name);
                 }, this);
@@ -74,10 +72,13 @@
 
         if(selectedCountry != null)
         {
-            var value = selectedCountry[0].VisaList[0];
-            var arrayValues = {};
-            arrayValues["ITA"] = "VOA";
-                mapObject.updateChoropleth(arrayValues);
+            var indexOf = countries.indexOf(selectedCountry[0].Name);
+            if(indexOf != null)
+            {
+                $("#map").remove();
+                $("#mapRow").append('<div id="map" class="map"></div>');
+                initMap(indexOf);
+            }
         }
     }
 
@@ -91,7 +92,7 @@
                     <button id="loadVisaBtn" class="btn btn-success" role="button">Visa</button>
                 </div>
             </form>
-        <div class="row">
+        <div id="mapRow" class="row">
             <div id="map" class="map"></div>
         </div>
     </div>
