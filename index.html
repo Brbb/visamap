@@ -68,9 +68,7 @@
         console.log(selectedCountry);
         if(selectedCountry != null)
         {
-            d3.select('#countryList').on('click', function(e) {
                 mapObject.updateChoropleth(selectedCountry.VisaList);
-            });
         }
     }
 
