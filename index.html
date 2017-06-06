@@ -3,7 +3,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css" >
 <!-- Latest compiled and minified JavaScript -->
@@ -19,7 +19,17 @@
 }
 
 .searchContainer{
-    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: rgb(247, 248, 248);
+}
+
+.container{
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
 }
 
 .search-input{
@@ -30,7 +40,13 @@
     background: rgb(247, 248, 248);
     color: rgba(88,105,105,1);
     font-weight: 300;
+    width: 100%;
+    outline: none;
+}
 
+.search-icon{
+    padding: 10px;
+    color: rgba(88,105,105,1);
 }
 
 </style>
@@ -97,8 +113,8 @@
 <body>
     <div class="container">
                 <div class="searchContainer">
-                    <input id="countryList" type="text" placeholder="Passport country" data-provide="typeahead" class="search-input" />
-                    <button id="loadVisaBtn" class="btn btn-success" role="button" onclick="loadVisaFor()">Visa</button>
+                    <i class="fa fa-search search-icon" onclick="loadVisaFor()" aria-hidden="true"></i>
+                    <input id="countryList" type="text" placeholder="Passport country" data-provide="typeahead" class="search-input"/>
                 </div>
         <div id="mapRow" class="row">
             <div id="map" class="map"></div>
