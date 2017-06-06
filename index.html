@@ -85,15 +85,18 @@
             loadVisaFor();
         }
 
+        var q = $("#countryList").val();
+        updateAutocompletion(q);
+    }
+
+    function checkForTab(e){
+        var keyCode = e.keyCode || e.which;
         if(keyCode == '9')
         {
             var completeWithCountry = $("#countryListAutoComplete").val(filteredCountries[0]);
             $("#countryList").val(completeWithCountry);
             $("#countryList").text(completeWithCountry);
         }
-
-        var q = $("#countryList").val();
-        updateAutocompletion(q);
     }
 
     function updateAutocompletion(q){
@@ -129,7 +132,7 @@
     <div class="headerSearchContainer">
                 <div class="searchContainer">
                     <i class="fa fa-search search-icon" onclick="loadVisaFor()" aria-hidden="true"></i>
-                    <input id="countryList" type="text" autocomplete="off" placeholder="Passport country" onkeyup="handleKeyPressed(event)" class="search-input"/>
+                    <input id="countryList" type="text" autocomplete="off" placeholder="Passport country" onkeydown="checkForTab(event)" onkeyup="handleKeyPressed(event)" class="search-input"/>
                     <input id="countryListAutoComplete" autocomplete="off" readonly type="text" class="search-input-autocomplete"/>
                 </div>
     </div>
