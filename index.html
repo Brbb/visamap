@@ -120,8 +120,9 @@
         }
     }
 
-    function handleKeyPressed(e){
-        if(e.keyCode == '13')
+    function handleKeyPressed(event){
+        console.log(event.keyCode);
+        if(event.keyCode == '13')
         {
             loadVisaFor();
         }
@@ -133,7 +134,7 @@
     <div class="container">
                 <div class="searchContainer">
                     <i class="fa fa-search search-icon" onclick="loadVisaFor()" aria-hidden="true"></i>
-                    <input id="countryList" type="text" placeholder="Passport country" data-provide="typeahead" onkeypress="handleKeyPressed(e)" class="search-input"/>
+                    <input id="countryList" type="text" placeholder="Passport country" data-provide="typeahead" onkeypress="handleKeyPressed(event)" class="search-input"/>
                 </div>
         <div id="mapRow" class="row mapContainer">
             <div id="map" class="map"></div>
