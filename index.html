@@ -11,6 +11,7 @@
 <script src="js/datamaps.world.min.js"></script>
 <script src="js/bootstrap3-typeahead.min.js"></script>
 <script src="js/datamaps.world.min.js"></script>
+<script src="js/zoom.js"></script>
 <style>
 .map{
     
@@ -92,11 +93,11 @@
                     ETA: 'yellow'
                 },
                 done: function(datamap) {
-                    datamap.svg.call(d3.behavior.zoom().on("zoom", redraw));
-                    function redraw() {
-                        datamap.svg.selectAll("g").attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
-                        }
-                    }
+	                this.zoom = new Zoom({
+  	                    $container: document.getElementById('map'),
+  	                    datamap: datamap
+                    });
+                }
             });
     }
 
