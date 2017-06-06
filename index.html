@@ -93,7 +93,7 @@
         var keyCode = e.keyCode || e.which;
         if(keyCode == '9')
         {
-            var completeWithCountry = $("#countryListAutoComplete").val(filteredCountries[0]);
+            var completeWithCountry = $("#countryListAutoComplete").val();
             $("#countryList").val(completeWithCountry);
             $("#countryList").text(completeWithCountry);
         }
