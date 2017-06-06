@@ -14,8 +14,8 @@
 <style>
 .map{
     
-    width: 90%; 
-    height: 90%;
+    width: 100%; 
+    height: 100%;
 }
 
 .searchContainer{
@@ -48,6 +48,10 @@
     padding: 10px;
     padding-left: 20px;
     color: rgba(88,105,105,1);
+}
+
+.mapContainer{
+    padding: 30px;
 }
 
 </style>
@@ -124,7 +128,7 @@
                     <i class="fa fa-search search-icon" onclick="loadVisaFor()" aria-hidden="true"></i>
                     <input id="countryList" type="text" placeholder="Passport country" data-provide="typeahead" onkeypress="handleKeyPressed(e)" class="search-input"/>
                 </div>
-        <div id="mapRow" class="row">
+        <div id="mapRow" class="row mapContainer">
             <div id="map" class="map"></div>
         </div>
     </div>
