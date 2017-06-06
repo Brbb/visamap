@@ -88,13 +88,25 @@
     }
 
     function updateAutocompletion(q){
-        var filteredCountries = countries.filter(function(country){
-            return country.startsWith(q);
-        });
 
-        if(filteredCountries != null && filteredCountries.length > 0)
+        if(q === '' || q == null)
         {
-            $("#countryListAutoComplete").val(filteredCountries[0]);
+            $("#countryListAutoComplete").text('');
+        }
+        else
+        {
+                var filteredCountries = countries.filter(function(country){
+                return country.startsWith(q);
+            });
+
+            if(filteredCountries != null && filteredCountries.length > 0)
+            {
+                $("#countryListAutoComplete").text(filteredCountries[0]);
+            }
+            else
+            {
+                $("#countryListAutoComplete").text('');
+            }
         }
     }
 

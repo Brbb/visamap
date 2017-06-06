@@ -38,6 +38,7 @@
     width: 100%;
     outline: none;
     z-index: 9999;
+    background: transparent;
 }
 
 .search-input-autocomplete{
