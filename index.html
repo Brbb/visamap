@@ -78,9 +78,18 @@
     }
 
     function handleKeyPressed(e){
-        if(e.keyCode == '13')
+        var keyCode = e.keyCode || e.which;
+        
+        if(keyCode == '13')
         {
             loadVisaFor();
+        }
+
+        if(keyCode == '9')
+        {
+            var completeWithCountry = $("#countryListAutoComplete").val(filteredCountries[0]);
+            $("#countryList").val(completeWithCountry);
+            $("#countryList").text(completeWithCountry);
         }
 
         var q = $("#countryList").val();
