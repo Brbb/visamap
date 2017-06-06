@@ -14,8 +14,8 @@
 <style>
 .map{
     
-    width: 80%; 
-    height: 80%;
+    width: 100%; 
+    height: 100%;
 }
 
 .searchContainer{
@@ -46,6 +46,7 @@
 
 .search-icon{
     padding: 10px;
+    padding-left: 20px;
     color: rgba(88,105,105,1);
 }
 
@@ -108,13 +109,20 @@
         }
     }
 
+    function handleKeyPressed(e){
+        if(e.keyCode == '13')
+        {
+            loadVisaFor();
+        }
+    }
+
 </script>
 </head>
 <body>
     <div class="container">
                 <div class="searchContainer">
                     <i class="fa fa-search search-icon" onclick="loadVisaFor()" aria-hidden="true"></i>
-                    <input id="countryList" type="text" placeholder="Passport country" data-provide="typeahead" class="search-input"/>
+                    <input id="countryList" type="text" placeholder="Passport country" data-provide="typeahead" onkeypress="handleKeyPressed(e)" class="search-input"/>
                 </div>
         <div id="mapRow" class="row">
             <div id="map" class="map"></div>
