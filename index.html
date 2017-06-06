@@ -30,11 +30,7 @@
                 data.forEach(function(element) {
                     countries.push(element.Name);
                 }, this);
-
-                var $input = $("#countryList");
-                $input.typeahead({ source: countries});
             }).done(function(){initMap(0);});
-
     });
 
     function initMap(index)
@@ -86,6 +82,20 @@
         {
             loadVisaFor();
         }
+
+        var q = $("#countryList").val();
+        updateAutocompletion(q);
+    }
+
+    function updateAutocompletion(q){
+        var filteredCountries = countries.filter(function(country){
+            return country.startsWith(q);
+        });
+
+        if(filteredCountries != null && filteredCountries.length > 0)
+        {
+            $("#countryListAutoComplete").val(filteredCountries[0]);
+        }
     }
 
 </script>
@@ -95,7 +105,8 @@
     <div class="headerSearchContainer">
                 <div class="searchContainer">
                     <i class="fa fa-search search-icon" onclick="loadVisaFor()" aria-hidden="true"></i>
-                    <input id="countryList" type="text" placeholder="Passport country" data-provide="typeahead" onkeypress="handleKeyPressed(event)" class="search-input"/>
+                    <input id="countryList" type="text" autocomplete="off" placeholder="Passport country" onkeypress="handleKeyPressed(event)" class="search-input"/>
+                    <input id="countryListAutoComplete" autocomplete="off" type="text" class="search-input-autocomplete"/>
                 </div>
     </div>
     <div id="mapRow" class="row mapContainer">

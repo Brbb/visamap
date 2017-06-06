@@ -37,6 +37,20 @@
     font-weight: 300;
     width: 100%;
     outline: none;
+    z-index: 9999;
+}
+
+.search-input-autocomplete{
+    position: absolute;
+    border: 0px;
+    height: 80px;
+    font-size: x-large;
+    font-weight: bolder;
+    color: rgba(95, 158, 160, 0.44);
+    font-weight: 300;
+    width: 100%;
+    outline: none;
+    margin-left: 63px; 
 }
 
 .search-icon{
