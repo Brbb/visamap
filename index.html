@@ -92,6 +92,7 @@
         if(q === '' || q == null)
         {
             $("#countryListAutoComplete").val('');
+            $("#countryListAutoComplete").text('');
         }
         else
         {
@@ -102,10 +103,12 @@
             if(filteredCountries != null && filteredCountries.length > 0)
             {
                 $("#countryListAutoComplete").val(filteredCountries[0]);
+                $("#countryListAutoComplete").text(filteredCountries[0]);
             }
             else
             {
                 $("#countryListAutoComplete").val('');
+                $("#countryListAutoComplete").text('');
             }
         }
     }
