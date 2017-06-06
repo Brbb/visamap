@@ -22,6 +22,17 @@
     padding: 10px;
 }
 
+.search-input{
+    border: 0px;
+    height: 80px;
+    font-size: x-large;
+    font-weight: bolder;
+    background: rgb(247, 248, 248);
+    color: rgba(88,105,105,1);
+    font-weight: 300;
+
+}
+
 </style>
 
 <script>
@@ -86,7 +97,7 @@
 <body>
     <div class="container">
                 <div class="searchContainer">
-                    <input id="countryList" type="text" placeholder="Passport country" data-provide="typeahead" class="form-control" />
+                    <input id="countryList" type="text" placeholder="Passport country" data-provide="typeahead" class="search-input" />
                     <button id="loadVisaBtn" class="btn btn-success" role="button" onclick="loadVisaFor()">Visa</button>
                 </div>
         <div id="mapRow" class="row">
